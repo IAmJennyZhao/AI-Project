@@ -14,6 +14,7 @@ public class TTTHuman extends Player{
         while(!board.getEmptyLocs().contains(choice)) {
             System.out.println("Please enter a valid move");
             choice = s.nextLine();
+
         }
         return choice;
     }
