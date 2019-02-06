@@ -81,14 +81,11 @@ public class TTTBoard extends Board {
 
         // check rows for streak
         for(int i = 0; i < getRows(); i++) {
-            if (streakInRow(i, player, 3) || streakInCol(i, player, 3))
+            if (streakInRow(i, player, 3)!=null || streakInCol(i, player, 3)!=null)
                 return true;
         }
 
-        if(streakInNorthEastDiag(2, 0, player, 3) || streakInSouthEastDiag(0, 0, player, 3))
-            return true;
-
-        return false;
+        return streakInNorthEastDiag(2, 0, player, 3)!=null || streakInSouthEastDiag(0, 0, player, 3)!=null;
     }
 
     /**
@@ -96,10 +93,7 @@ public class TTTBoard extends Board {
      * @return true if the game is over, false otherwise
      */
     public boolean isGameOver() {
-        if(isWinner("X") || !isWinner("O") || getEmptyLocs().size() == 0)
-            return true;
-        else
-            return false;
+        return isWinner("X") || isWinner("O") || getEmptyLocs().size() == 0;
 
     }
 
