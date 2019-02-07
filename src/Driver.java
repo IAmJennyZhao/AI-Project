@@ -13,6 +13,7 @@ public class Driver {
                 choice = player1.getMove(board);
                 board.placePiece(choice, player1.name);
                 isFinished = board.isGameOver();
+
                 turnCount =2;
             } else if (turnCount == 2){
                 choice = player2.getMove(board);
