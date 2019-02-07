@@ -6,13 +6,13 @@ public class TTTHuman extends Player{
     }
     public String getMove(Board board){
 
-        System.out.println(board.toString());
+        System.out.print(board.toString());
 
-        System.out.print("Enter your move(1-9): ");
+        System.out.println("Enter your move(1-9): ");
         Scanner s = new Scanner(System.in);
         String choice = s.nextLine();
         while(!board.getEmptyLocs().contains(choice)) {
-            System.out.println("Please enter a valid move");
+            System.out.print("Please enter a valid move");
             choice = s.nextLine();
 
         }
