@@ -4,7 +4,7 @@ public class Driver {
     public static void main(String[] args) {
         Board board = new TTTBoard();
         Player player1 = new TTTHuman("X");
-        Player player2 = new TTTHuman("O");
+        Player player2 = new TTTPlayerBasicAI("O");
         int turnCount = 1;
         String choice;
         boolean isFinished = false;
