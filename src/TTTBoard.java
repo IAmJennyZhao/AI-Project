@@ -6,6 +6,11 @@ public class TTTBoard extends Board {
     public static final int ROWS = 3;
     public static final int COLS = 3;
 
+    /**
+     * Constructs a 3x3 board for Tic Tac Toe
+     * that has the same initialization as board
+     * @param board
+     */
     public TTTBoard(TTTBoard board){
         super(ROWS,COLS);
         for(int r = 0; r<ROWS; r++){
@@ -42,8 +47,11 @@ public class TTTBoard extends Board {
     public void placePiece(String loc, String player) {
         for (int r = 0; r < ROWS; r++) {
             for (int c = 0; c < COLS; c++) {
-                if (theBoard[r][c].equals(loc))
+                if (theBoard[r][c].equals(loc)) {
                     theBoard[r][c] = player;
+                    r = ROWS;
+                    c = COLS;
+                }
             }
         }
     }
