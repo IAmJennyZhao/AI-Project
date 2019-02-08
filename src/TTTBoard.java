@@ -6,6 +6,15 @@ public class TTTBoard extends Board {
     public static final int ROWS = 3;
     public static final int COLS = 3;
 
+    public TTTBoard(TTTBoard board){
+        super(ROWS,COLS);
+        for(int r = 0; r<ROWS; r++){
+            for (int c = 0; c<COLS; c++){
+                set(r,c,board.get(r,c));
+            }
+        }
+    }
+
     /**
      * Constructs a 3x3 board for Tic Tac Toe and initializes
      * the board in the following format:

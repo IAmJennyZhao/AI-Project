@@ -30,8 +30,12 @@ public class TTTPlayerProAI extends Player {
     private MoveInfo recMove(TTTBoard board, String playerTurn, String moveLoc) {
         MoveInfo max = new MoveInfo(moveLoc, -10);
         MoveInfo min = new MoveInfo(moveLoc, 10);
+        ArrayList<String> empty = board.getEmptyLocs();
+        for(String spot: empty){
+            TTTBoard board1 = new TTTBoard(board);
+            board1.placePiece(spot, playerTurn);
+        }
 
-        // . . .
         return null;
 
     }
