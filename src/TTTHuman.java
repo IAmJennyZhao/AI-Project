@@ -4,7 +4,7 @@ public class TTTHuman extends Player{
     public TTTHuman(String inName){
         super(inName);
     }
-    public String getMove(Board board){
+    public String getMove(Board board, String otherPlayer){
 
         System.out.print(board.toString());
 

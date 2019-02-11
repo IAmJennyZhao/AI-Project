@@ -14,5 +14,5 @@ public abstract class Player {
      * @param board the board of the game
      * @return the move location for the player
      */
-    public abstract String getMove(Board board);
+    public abstract String getMove(Board board, String otherPlayer);
 }

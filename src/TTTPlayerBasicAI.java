@@ -7,7 +7,7 @@ public class TTTPlayerBasicAI extends Player{
     public TTTPlayerBasicAI(String inName){
         super(inName);
     }
-    public String getMove(Board board){
+    public String getMove(Board board, String otherPlayer){
         ArrayList<String> temp = board.getEmptyLocs();
         Random rand = new Random();
         int choice = rand.nextInt(temp.size());
