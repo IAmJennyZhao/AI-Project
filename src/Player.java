@@ -3,6 +3,7 @@ public abstract class Player {
 
     /**
      * Constructor for Player
+     *
      * @param inName the name of the player
      */
     public Player(String inName) {
@@ -11,6 +12,7 @@ public abstract class Player {
 
     /**
      * Return the move location for the player
+     *
      * @param board the board of the game
      * @return the move location for the player
      */

@@ -5,6 +5,7 @@ public class MoveInfo {
     /**
      * Construct a MoveInfo object with a location and
      * score
+     *
      * @param inLoc   the location of the move
      * @param inScore the score of the move
      */
@@ -15,6 +16,7 @@ public class MoveInfo {
 
     /**
      * Return the row of the move
+     *
      * @return the location of the move
      */
     public String getLoc() {
@@ -23,6 +25,7 @@ public class MoveInfo {
 
     /**
      * Return the score of the move
+     *
      * @return score of the move
      */
     public int getScore() {
@@ -31,6 +34,7 @@ public class MoveInfo {
 
     /**
      * Sets the location of the score
+     *
      * @param inLoc the location of the score
      */
     public void setLoc(String inLoc) {

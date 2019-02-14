@@ -9,13 +9,14 @@ public class TTTBoard extends Board {
     /**
      * Constructs a 3x3 board for Tic Tac Toe
      * that has the same initialization as board
+     *
      * @param board
      */
-    public TTTBoard(TTTBoard board){
-        super(ROWS,COLS);
-        for(int r = 0; r<ROWS; r++){
-            for (int c = 0; c<COLS; c++){
-                set(r,c,board.get(r,c));
+    public TTTBoard(TTTBoard board) {
+        super(ROWS, COLS);
+        for (int r = 0; r < ROWS; r++) {
+            for (int c = 0; c < COLS; c++) {
+                set(r, c, board.get(r, c));
             }
         }
     }
@@ -41,7 +42,8 @@ public class TTTBoard extends Board {
 
     /**
      * Places a player piece on the board at the given location.
-     * @param loc the location to place the piece
+     *
+     * @param loc    the location to place the piece
      * @param player the player making the move
      */
     public void placePiece(String loc, String player) {
@@ -58,6 +60,7 @@ public class TTTBoard extends Board {
 
     /**
      * Retracts the piece at the given location.
+     *
      * @param loc the location to reset
      */
     public void retractPiece(String loc) {
@@ -74,14 +77,14 @@ public class TTTBoard extends Board {
     }
 
     /**
-     * Returns the empty locations on the 
+     * Returns the empty locations on the
      */
     public ArrayList<String> getEmptyLocs() {
         ArrayList<String> empty = new ArrayList<>();
 
-        for(int r = 0; r < theBoard.length; r++) {
-            for(int c = 0; c < theBoard[0].length; c++) {
-                if(!theBoard[r][c].equals("X") && !theBoard[r][c].equals("O"))
+        for (int r = 0; r < theBoard.length; r++) {
+            for (int c = 0; c < theBoard[0].length; c++) {
+                if (!theBoard[r][c].equals("X") && !theBoard[r][c].equals("O"))
                     empty.add((String) theBoard[r][c]);
             }
         }
@@ -92,26 +95,28 @@ public class TTTBoard extends Board {
     /**
      * Returns true if the given player wins the game in the
      * current state, false otherwise
+     *
      * @param player the player to check for a win
      */
     public boolean isWinner(String player) {
 
         // check rows for streak
-        for(int i = 0; i < getRows(); i++) {
-            if (streakInRow(i, player, 3)!=null || streakInCol(i, player, 3)!=null)
+        for (int i = 0; i < getRows(); i++) {
+            if (streakInRow(i, player, 3) != null || streakInCol(i, player, 3) != null)
                 return true;
         }
 
-        return streakInNorthEastDiag(2, 0, player, 3)!=null || streakInSouthEastDiag(0, 0, player, 3)!=null;
+        return streakInNorthEastDiag(2, 0, player, 3) != null || streakInSouthEastDiag(0, 0, player, 3) != null;
 
     }
 
     /**
      * Returns true if the game is over, false otherwise
+     *
      * @return true if the game is over, false otherwise
      */
     public boolean isGameOver() {
-        if(isWinner("X") || isWinner("O") || getEmptyLocs().size() == 0)
+        if (isWinner("X") || isWinner("O") || getEmptyLocs().size() == 0)
             return true;
         else
             return false;
