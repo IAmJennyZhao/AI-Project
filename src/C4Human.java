@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -17,9 +18,20 @@ public class C4Human extends Player {
         String move = in.nextLine();
         C4Board c4Board = (C4Board) board;
         int[] emptyRow = c4Board.getEmptyRow();
-        while (emptyRow[Integer.parseInt(move)] != -1) {
-            System.out.println("Please enter a VALID column to place your piece in (1-7): ");
-            move = in.nextLine();
+        Boolean valid = false;
+        Integer xd;
+        while (!valid) {
+            try {
+                xd = Integer.parseInt(move);
+                if (xd > 7 || xd < 1 || emptyRow[xd - 1] == -1) {
+                    System.out.println("Please enter a VALID column to place your piece in (1-7): ");
+                    move = in.nextLine();
+                } else
+                    valid = true;
+            } catch (Exception e) {
+                System.out.println("Please enter a VALID column to place your piece in (1-7): ");
+                move = in.nextLine();
+            }
         }
         return move;
     }

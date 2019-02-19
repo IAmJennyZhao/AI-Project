@@ -137,12 +137,12 @@ public class C4Board extends Board {
     public String toString() {
         String output = "";
         for (int i = 1; i < COLS + 1; i++) {
-            output = output + i;
+            output = output + i + " ";
         }
         for (int r = 0; r < ROWS; r++) {
             output = output + "\n";
             for (int c = 0; c < COLS; c++) {
-                output = output + get(r, c);
+                output = output + get(r, c) +" ";
             }
         }
         return output;
